@@ -6,36 +6,54 @@
     <!--2. TBD Display Input box selections-->
     <!--3. TBD Develop scripts for output score-->
 
-<Header><b>Cost Vs Value Estimator</b></Header>
+<Header><b>Cost Vs Value</b></Header>
 <body>
-    <div id="Intro">
-        <p>Cost: Cost to undertake activity and sustain a given solution or system. I.e., Money, Time, People.</p>
-        <p>Value: Value or benefit upon implementation. I.e., Effeciency gain, effectivity increase.</p>
-    </div>
-    <div>
-        <fieldset>
-            <legend>User Form</legend>
-            <form>
-                <label for="InpCost">Cost</label>
-                    <br>
-                <input type="range" id="InpCost" name="InpCost" min="1" max="9" step="1" onchange="this.nextElementSibling.value = this.value">
-                <input type="text" id="InpTextCost" value ="">
-                    <br>
-                <label for="InpValue">Value</label>
-                    <br>
-                <input type="range" id="InpValue" name="InpValue" min="1" max="9" step="1" onchange="this.nextElementSibling.value = this.value">
-                <input type="text" id="InpTextValue" value ="">
-                    <br>
-                    <br>
-                <label for="InpTextScore">Score</label>
-                <input type="text" id="InpTextScore" name="InpTextScore" value = "Awaiting Slide" on>
-                    <br>
-                    <br>
-                <button id="estimate" onclick="score()">Estimate</button>
-                    <br>
-            </form>
-        </fieldset>
-    </div>
+    <section id="introduction">
+        <div>
+            <p>Hypothesize the proposal in two distinct categories:</p>
+            <ul>
+                <li><b>Cost</b> to undertake a given activity / solution.</li>
+                <ul>
+                    <li><i>The proposed activity would require; X dollars, Y time, and Z number of resources, to build - sustain - retire.</i></li>
+                </ul>
+                <br>
+                <li><b>Value</b> or benefit upon implementation.</li>
+                <ul>
+                    <li><i>The proposed activity is predicted to generate X dollars of revenue.</i></li>
+                    <li><i>The proposed activity mitigates, removes the risk of Y happening.</i></li>
+                </ul>
+            </ul>
+        </div>
+        <div>
+            <!--Formula Display-->
+        </div>
+    </section>
+    <section id="userForm">
+        <div>
+            <fieldset>
+                <legend>User Form</legend>
+                <form>
+                    <label for="InpCost">Cost</label>
+                        <br>
+                    <input type="range" id="InpCost" name="InpCost" min="1" max="9" step="1" onchange="this.nextElementSibling.value = this.value">
+                    <input type="text" id="InpTextCost" value ="">
+                        <br>
+                    <label for="InpValue">Value</label>
+                        <br>
+                    <input type="range" id="InpValue" name="InpValue" min="1" max="9" step="1" onchange="this.nextElementSibling.value = this.value">
+                    <input type="text" id="InpTextValue" value ="">
+                        <br>
+                        <br>
+                    <button id="estimate" onclick="score()">Estimate</button>
+                        <br>
+                </form>
+            </fieldset>
+        </div>
+    </section>
+    <section id="nextSteps">
+        <!--Explain what to do with the score..-->
+        <p>From here..</p>
+    </section>
 </body>
 <br>
 <script>
@@ -46,9 +64,8 @@
             document.getElementById('InpValue').value
         const score =
             (val * 6) - (cost * 4)
-        
-            document.getElementById('InpTextScore').value = score
+        alert("Your score is " + score)
     }
 </script>
-<Footer>&#169 OSInc</Footer>
+<Footer>Last Updated :: 24/02/24</Footer>
 </html>
